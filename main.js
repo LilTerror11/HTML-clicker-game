@@ -116,7 +116,7 @@ function got() {
 function buy(id) {
     let i = id - 1
     bought = false;
-    if (cost[i] < clicks) {
+    if (cost[i] <= clicks) {
         if (!upgrades[i]){
             if (id == 1) {
                 clickPerClick += 2;
