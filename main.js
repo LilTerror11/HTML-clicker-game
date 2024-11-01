@@ -1,3 +1,5 @@
+// HCL
+
 let clicks = 0;
 let canSave = false;
 
@@ -34,30 +36,30 @@ function setup() {
     cpsElement = document.getElementById("cps");
     if (typeof(Storage) !== "undefined") {
         canSave = true;
-        if (localStorage.clickcount) {
-            clicks = Number(localStorage.clickcount);
+        if (localStorage.HtmlClickerGame_clickcount) {
+            clicks = Number(localStorage.HtmlClickerGame_clickcount);
         } else {
-            localStorage.clickcount = 0;
+            localStorage.HtmlClickerGame_clickcount = 0;
         };
-        if (localStorage.clicksPerSecond) {
-            clickPerSecond = Number(localStorage.clicksPerSecond);
+        if (localStorage.HtmlClickerGame_clicksPerSecond) {
+            clickPerSecond = Number(localStorage.HtmlClickerGame_clicksPerSecond);
         } else {
-            localStorage.clicksPerSecond = 0;
+            localStorage.HtmlClickerGame_clicksPerSecond = 0;
         };
-        if (localStorage.clicksPerSecond) {
-            clickPerSecond = Number(localStorage.clicksPerSecond);
+        if (localStorage.HtmlClickerGame_clicksPerSecond) {
+            clickPerSecond = Number(localStorage.HtmlClickerGame_clicksPerSecond);
         } else {
-            localStorage.clicksPerSecond = 0;
+            localStorage.HtmlClickerGame_clicksPerSecond = 0;
         };
-        if (localStorage.clicksPerClick) {
-            clickPerClick = Number(localStorage.clicksPerClick);
+        if (localStorage.HtmlClickerGame_clicksPerClick) {
+            clickPerClick = Number(localStorage.HtmlClickerGame_clicksPerClick);
         } else {
-            localStorage.clicksPerClick = 1;
+            localStorage.HtmlClickerGame_clicksPerClick = 1;
         };
-        if (localStorage.upgrades) {
-            upgrades = JSON.parse(localStorage.upgrades);
+        if (localStorage.HtmlClickerGame_upgrades) {
+            upgrades = JSON.parse(localStorage.HtmlClickerGame_upgrades);
         } else {
-            localStorage.upgrades = JSON.stringify(upgrades);
+            localStorage.HtmlClickerGame_upgrades = JSON.stringify(upgrades);
         };
         updateCount();
         loops();
@@ -84,11 +86,11 @@ function updateCount() {
 
 function save() {
     if (canSave) {
-        if (localStorage.clickcount) {
-            localStorage.clickcount = clicks;
-            localStorage.clicksPerSecond = clickPerSecond;
-            localStorage.clicksPerClick = clickPerClick;
-            localStorage.upgrades = JSON.stringify(upgrades);
+        if (localStorage.HtmlClickerGame_clickcount) {
+            localStorage.HtmlClickerGame_clickcount = clicks;
+            localStorage.HtmlClickerGame_clicksPerSecond = clickPerSecond;
+            localStorage.HtmlClickerGame_clicksPerClick = clickPerClick;
+            localStorage.HtmlClickerGame_upgrades = JSON.stringify(upgrades);
         }
     };
     console.log("saving");

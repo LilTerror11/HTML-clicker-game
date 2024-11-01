@@ -8,7 +8,7 @@ let icon = [
 
 let quotes = [
     "What sketchy things is up today?",
-    ""
+    "Do you realy need a second mouse?"
 ]
 
 if (upgrades[0] == true & (upgrades[1] == true)) {
