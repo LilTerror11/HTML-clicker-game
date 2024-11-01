@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button Clicker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body style="margin: 0">
+<script src="main.js"></script>
+<div class="header">
+<h1>Button Clicker</h1>
+</div>
+<div class="content">
+    <div class="button-div">
+        <h3 class="clicks" id="clicks">Clicks: 0</h3>
+        <p class="cps" id="cps">CLicks Per Second: 0</p>
+        <button class="button" id="button" onclick="onClick();" tabindex="-1">What</button>
+    </div>
+    <div class="shop-div">
+        <div class="tooltip">
+            <div class="title">
+                <h5 style="float: left; margin:1.2%; margin-right:0; font-size:3.5vh;" id="cost">Cost:</h5>
+                <h4 style="float: right; margin:0; position: absolute; right:calc(50% - 2em);">Tool Tip</h4>
+            </div>
+            <div id="tipContent">
+                <p class="tip" id="tipTitle" style="font-size:2vw; margin:0;">Tip</p>
+                <p class="tip" id="tipBody" style="top:50%; font-size:1.5vw;"></p>
+            </div>
+        </div>
+        <div class="upgrades">
+            <img src="images/mouse.png" class="upgrade" id="1">
+            <img src="images/cpsmore.png" class="upgrade" id="2">
+            <img src="images/sketchy.png" class="upgrade" id="3">
+            <!--<button class="upgrade" id="1">Buy 1 Extra CPS on a click test</button>-->
+            <!--<button class="upgrade" id="2">Buy Another Mouse</button>-->
+            <!--<button class="upgrade" id="3">Program to click the button for you that was bought of e-bay for 5 bucks</button>-->
+        </div>
+        <div style="visibility: hidden; float: right;">
+            <button onclick="save();" style="float: left;">SAVE</button><br><br>
+            <button onclick="clickPerSecond++;" style="float: left;">Buy 1 CPS</button>
+            <button onclick="clickPerSecond += 10;" style="float: left;">Buy 10 CPS</button>
+            <button onclick="clickPerSecond += clicks; clicks = 0; updateCount();" style="float: left;">Convert Clicks to CPS</button>
+        </div>
+    </div>
+</div>
+<script>
+    setup();
+</script>
+<script src="tips.js"></script>
+</body>
+</html>
