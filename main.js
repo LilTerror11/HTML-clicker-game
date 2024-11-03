@@ -104,7 +104,7 @@ function loops() {
     clicksSecond = setInterval(function() {
         clicks += clickPerSecond/1000;
         updateCount();
-    }, 1)
+    }, 0)
 }
 
 let bought = false
