@@ -102,9 +102,9 @@ function loops() {
     }, interval*intervalMultiplier)
 
     clicksSecond = setInterval(function() {
-        clicks += clickPerSecond/1000;
+        clicks += clickPerSecond/100;
         updateCount();
-    }, 0)
+    }, 10)
 }
 
 let bought = false
