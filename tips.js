@@ -8,10 +8,10 @@ let icon = [
 ]
 
 let image = [
-    "Images/mouse.png",
-    "Images/cpsmore.png",
-    "Images/sketchy.png",
-    "Images/save.png"
+    "images/mouse.png",
+    "images/cpsmore.png",
+    "images/sketchy.png",
+    "images/save.png"
 ]
 
 
