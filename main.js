@@ -1,7 +1,13 @@
 // HCL
+let date = new Date();
+let past = date.getTime();
+
+let clickSpeed = 0;
 
 let clicks = 0;
 let canSave = false;
+
+let deltaClick = 0;
 
 let clickValue = 0;
 
@@ -15,14 +21,16 @@ let mainLoop;
 let counterFormat = `Clicks: `;
 let cpsFormat = `Clicks Per Second: `;
 
+let saveButton;
+
 // setInterval is in milliseconds
 let interval = 1;
 let intervalMultiplier = 60*1000;  // Minutes
 
 
-let ids = ["moreMouse", "cpsCheat", "sketch.exe"]
-let upgrades = [false, false, false]
-let cost = [100, 50, 200]
+let ids = ["moreMouse", "cpsCheat", "sketch.exe", "saveButton"]
+let upgrades = [false, false, false, false]
+let cost = [100, 50, 200, 500]
 
 function randRange(min, max) {
     min = Math.ceil(min)
@@ -34,6 +42,7 @@ function randRange(min, max) {
 function setup() {
     clickElement = document.getElementById("clicks");
     cpsElement = document.getElementById("cps");
+    saveButton = document.getElementById("save")
     if (typeof(Storage) !== "undefined") {
         canSave = true;
         if (localStorage.HtmlClickerGame_clickcount) {
@@ -73,9 +82,11 @@ function setup() {
 function onClick() {
     clicks += clickPerClick;
     updateCount();
+    clickSpeed += 1;
 }
 
 function updateCount() {
+    document.getElementById("chet").innerHTML = clickSpeed;
     //if (setuped == true) {
     //    clickElement.innerHTML = counterFormat + clicks;
     //}
@@ -104,6 +115,14 @@ function loops() {
     clicksSecond = setInterval(function() {
         clicks += clickPerSecond/100;
         updateCount();
+        if (clickSpeed >= 50) {
+            document.getElementById("button").remove();
+            alert("Naughty");
+        }
+        clickSpeed -= 0.1;
+        if (clickSpeed < 0) {
+            clickSpeed = 0;
+        }
     }, 10)
 }
 
@@ -127,6 +146,9 @@ function buy(id) {
             } else if (id == 3) {
                 clickPerSecond += 1;
                 got();
+            } else if (id == 4) {
+                got();
+                saveButton.hidden = false;
             }
         }
     }

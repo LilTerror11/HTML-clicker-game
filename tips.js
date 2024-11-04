@@ -3,12 +3,24 @@ let icon = [
     //"<img src=\"Images/mouse.png\">",
     "Mouse",
     "CPS+",
-    "Sketch.exe"
+    "Sketch.exe",
+    "Saving"
 ]
 
+let image = [
+    "Images/mouse.png",
+    "Images/cpsmore.png",
+    "Images/sketchy.png",
+    "Images/save.png"
+]
+
+
 let quotes = [
+    "How did you cheat a CPS test, but need to buy a auto clicker?",
     "What sketchy things is up today?",
-    "Do you realy need a second mouse?"
+    "Do you realy need a second mouse?",
+    "Don't press the shift key after clicking the button...",
+    "Do you have a save button? if not, buy one >:)"
 ]
 
 if (upgrades[0] == true & (upgrades[1] == true)) {
@@ -19,26 +31,30 @@ if (upgrades[0] == true & (upgrades[1] == true)) {
 // Image Format
 // <img src=\"Images/${image}\">
 
-let image = [
-    "mouse.png"
-]
-
 let name = [
     "A Second mouse",
     "Extra cps on click test",
-    "Autoclicker Program off e-bay"
+    "Autoclicker Program off e-bay",
+    "The save button"
 ];
 
 let tip = [
     "Now you can click twice as fast!... if you have 2 fingers",
     "A quick and dirty way to cheat",
-    "It's quite sketchy, but was only 5 bucks"
+    "It's quite sketchy, but was only 5 bucks",
+    "Now you can less parranoid, You can save manualy now!"
 ];
 
 let tipTitle = document.getElementById("tipTitle")
 let tipBody = document.getElementById("tipBody")
 let tipFull = document.getElementById("tipContent")
 let tipCost = document.getElementById("cost")
+let upgradeList = document.getElementById("upgrades")
+//let saveButton = document.getElementById("save")
+
+if (!upgrades[3]) {
+    saveButton.hidden = true
+}
 
 tipFull.hidden = true
 
@@ -69,13 +85,33 @@ function click(e) {
     buy(Number(element.id))
 }
 
-for (let i = 0; i < elements.length; i++) {
+/*for (let i = 0; i < elements.length; i++) {
     element = elements[i];
     console.log(element);
     element.addEventListener("mouseover", toolTip);
     element.addEventListener("mouseout", hide);
     element.addEventListener("click", click);
     element.innerHTML = icon[i]
+}*/
+
+
+for (let i = 0; i < icon.length; i++) {
+    let upgrade;
+    if (image[i] != undefined) {
+        upgrade = document.createElement("img")
+        upgrade.src = image[i]
+    } else {
+        upgrade = document.createElement("button")
+        upgrade.innerHTML = icon[i]
+    }
+    upgrade.addEventListener("mouseover", toolTip);
+    upgrade.addEventListener("mouseout", hide);
+    upgrade.addEventListener("click", click);
+
+    upgrade.id = i+1;
+    upgrade.className = "upgrade"
+    upgradeList.append(upgrade)
 }
+
 
 console.log(canSave)

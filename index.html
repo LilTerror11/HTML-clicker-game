@@ -6,15 +6,17 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body style="margin: 0">
 <script src="main.js"></script>
+<body style="margin: 0">
 <div class="header">
-<h1>Button Clicker</h1>
+    <button style="float: right; vertical-align: middle; font-size:2px;" onclick="save();" id="save"><strong>Save</strong></button>
+    <h1>Button Clicker</h1>
 </div>
 <div class="content">
     <div class="button-div">
         <h3 class="clicks" id="clicks">Clicks: 0</h3>
         <p class="cps" id="cps">CLicks Per Second: 0</p>
+        <p class="cps" id="chet"></p>
         <button class="button" id="button" onclick="onClick();" tabindex="-1">What</button>
     </div>
     <div class="shop-div">
@@ -28,10 +30,10 @@
                 <p class="tip" id="tipBody" style="top:50%; font-size:1.5vw;"></p>
             </div>
         </div>
-        <div class="upgrades">
-            <img src="images/mouse.png" class="upgrade" id="1">
+        <div class="upgrades" id="upgrades">
+            <!--<img src="images/mouse.png" class="upgrade" id="1">
             <img src="images/cpsmore.png" class="upgrade" id="2">
-            <img src="images/sketchy.png" class="upgrade" id="3">
+            <img src="images/sketchy.png" class="upgrade" id="3">-->
             <!--<button class="upgrade" id="1">Buy 1 Extra CPS on a click test</button>-->
             <!--<button class="upgrade" id="2">Buy Another Mouse</button>-->
             <!--<button class="upgrade" id="3">Program to click the button for you that was bought of e-bay for 5 bucks</button>-->

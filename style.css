@@ -74,10 +74,12 @@ body {
 }
 
 .upgrade {
+    float: left;
     padding:0;
     background: none;
     border: none;
-    width:10vh;
+    width: 10vh;
+    height: 10vh;
     filter: blur(0);
     image-rendering: pixelated;
 }
